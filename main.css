@@ -1,7 +1,87 @@
-body,
-html {
-  /* height:100%; */
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-  margin: 0px;
-  padding: 0px;
+/* Container grid: header, main, footer */
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header | Main | Footer */
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Main grid for store items */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual store item */
+.store-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  height: 100%; /* Equal height items */
+}
+
+.store-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Info row: Rating | Price | Stock */
+.store-item span {
+  display: inline-block;
+}
+
+.store-item span:nth-child(3) {
+  margin-left: auto; /* Push stock to right in the row if needed */
+}
+
+.store-item .info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f2f2f2;
 }
